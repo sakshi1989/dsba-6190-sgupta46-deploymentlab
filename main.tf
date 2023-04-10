@@ -124,7 +124,7 @@ resource "azurerm_windows_function_app" "wfa" {
 // Azure Synapse Analytics
 
 resource "azurerm_storage_account" "storage_hns" {
-  name                     = "${var.class_name}${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}st_hns"
+  name                     = "${var.class_name}${var.student_name}${random_integer.deployment_id_suffix.result}hns"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
