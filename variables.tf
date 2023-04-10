@@ -45,3 +45,8 @@ variable "class_name" {
   type        = string
   default     = "dsba6190"
 }
+
+variable "sql_administrator_login_password" {
+  description = "The SQL administrator login password."
+  sensitive   = true
+}
