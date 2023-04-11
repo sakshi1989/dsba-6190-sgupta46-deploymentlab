@@ -39,7 +39,7 @@ jobs:
       - name: Terraform Plan
         id: plan
 
-        run: terraform plan -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}"        
+        run: terraform plan -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}"       
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}"        
+        run: terraform apply -auto-approve -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}"     

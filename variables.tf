@@ -50,3 +50,7 @@ variable "sql_administrator_login_password" {
   description = "The SQL administrator login password."
   sensitive   = true
 }
+
+variable "my_public_ip" {
+  description = "Your public IP address."
+}
