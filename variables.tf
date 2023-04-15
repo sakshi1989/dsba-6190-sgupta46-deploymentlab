@@ -54,9 +54,3 @@ variable "sql_administrator_login_password" {
 variable "my_public_ip" {
   description = "Your public IP address."
 }
-
-variable "user_email" {
-  description = "The email address of the user who needs access to the Synapse serverless pool."
-  type        = string
-  default     = "sgupta46@uncc.edu"
-}

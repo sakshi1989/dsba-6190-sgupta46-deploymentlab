@@ -173,10 +173,3 @@ resource "azurerm_synapse_firewall_rule" "syfirewall" {
   end_ip_address       = var.my_public_ip
 }
 
-// Invite the user to the Synapse workspace and grant them the Synapse SQL User role
-
-resource "azurerm_synapse_workspace_access" "wsaccess" {
-  email                = var.user_email
-  role                 = "Workspace Synapse Sql User"
-  synapse_workspace_id = azurerm_synapse_workspace.synapsews.id
-}
