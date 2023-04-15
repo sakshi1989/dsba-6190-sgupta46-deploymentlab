@@ -14,7 +14,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      SQL_ADMIN_PASSWORD: ${{secrets.SQL_ADMIN_PASSWORD}}
+            
     runs-on: ubuntu-latest
 
     defaults:
@@ -39,7 +39,7 @@ jobs:
       - name: Terraform Plan
         id: plan
 
-        run: terraform plan -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}"       
+        run: terraform plan -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}" -var="user_email"      
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}"     
+        run: terraform apply -auto-approve -var="sql_administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -var="my_public_ip=${{ secrets.MY_PUBLIC_IP }}" -var="user_email"    
